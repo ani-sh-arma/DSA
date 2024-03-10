@@ -447,6 +447,5 @@ int main(int argc, char const *argv[])
     cout << endl;
     p22();
     cout << endl;
-
     return 0;
 }
