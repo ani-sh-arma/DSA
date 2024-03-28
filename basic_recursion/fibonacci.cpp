@@ -7,14 +7,12 @@ int fibonacci(int n)
     {
         return n;
     }
-    int secLast = fibonacci(n - 2);
-    int last = fibonacci(n - 1);
-    return secLast + last;
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 int main()
 {
-    int num = 11;
-    cout << fibonacci(num-1);
+    int num = 10;
+    cout << fibonacci(num);
     return 0;
 }
