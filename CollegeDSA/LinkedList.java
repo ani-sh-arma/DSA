@@ -3,13 +3,11 @@ import java.util.Scanner;
 class Node {
     int data;
     Node next;
-
     public Node(int data) {
         this.data = data;
         this.next = null;
     }
 }
-
 
 public class LinkedList {
     Node head;
@@ -34,7 +32,6 @@ public class LinkedList {
         while (current.next!= null) {
             current = current.next;
         }
-
         current.next = newNode;
     }
 
@@ -43,7 +40,6 @@ public class LinkedList {
             // List is empty, nothing to delete
             return;
         }
-    
         Node temp = head;
         head = head.next;
         temp.next = null; // Detach the old head node from the list
@@ -51,8 +47,7 @@ public class LinkedList {
 
     void insertInSortedOrder(int data) {
         Node newNode = new Node(data);
-
-        // If the list is empty or the new node should be the new head
+        
         if (head == null || data < head.data) {
             newNode.next = head;
             head = newNode;
@@ -177,4 +172,3 @@ public class LinkedList {
         }
     }
 }
-

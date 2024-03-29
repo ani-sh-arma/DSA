@@ -12,7 +12,6 @@ class Node{
     }
 }
 
-
 public class BinarySearchTree {
     Node root;
 
