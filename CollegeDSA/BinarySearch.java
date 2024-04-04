@@ -1,6 +1,3 @@
-// Name : Anish Sharma
-// Enrollment No. : 202203103510042
-
 import java.util.Scanner;
 
 public class BinarySearch {

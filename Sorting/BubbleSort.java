@@ -1,6 +1,3 @@
-// Name : Ankit Patil
-// Enrollment No. : 202203103510124
-
 package Sorting;
 
 public class BubbleSort {
