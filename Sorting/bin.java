@@ -1,6 +1,6 @@
 package Sorting;
 
-public class SemiInsertionSort {
+public class bin {
     static int[] insertionSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j <= i; j++) {
