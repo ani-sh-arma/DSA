@@ -3,22 +3,16 @@ using namespace std;
 
 int removeDuplicates(int arr[], int n)
 {
-    map<int, int> mp;
-    for (int i = 0; i < n; i++)
+    int i = 0;
+    for (int j = 0; j < n; j++)
     {
-        mp[arr[i]]++;
+        if (arr[i] != arr[j])
+        {
+            arr[++i] = arr[j];
+        }
     }
-    int j = 0;
-    for (auto it : mp)
-    {
-        arr[j++] = it.first;
-    }
-    int size = j;
-    while (j < n)
-    {
-        arr[j++] = 0;
-    }
-    return size;
+
+    return i + 1;
 }
 
 int main(int argc, char const *argv[])

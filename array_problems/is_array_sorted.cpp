@@ -7,7 +7,6 @@ bool isSorted(int arr[], int n)
     {
         if (arr[i] > arr[i + 1])
         {
-            cout << "In false";
             return false;
         }
     }
