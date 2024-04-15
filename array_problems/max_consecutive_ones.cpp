@@ -16,8 +16,6 @@ int maxConsecutiveOnes(int arr[], int n)
         {
             count = 0;
         }
-        
-        
     }
     return maxCount;
 }
