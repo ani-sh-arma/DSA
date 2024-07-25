@@ -55,7 +55,7 @@ vector<int> twoSumOptimal(vector<int> &nums, int target)
 int main()
 {
     vector<int> nums = {2, 7, 11, 21};
-    int target = 9;
+    int target = 23;
 
     vector<int> result = twoSumOptimal(nums, target);
     cout << "Indices: " << result[0] << " " << result[1] << endl;

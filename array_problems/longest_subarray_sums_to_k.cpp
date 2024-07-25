@@ -30,9 +30,10 @@ int longestSubarraySumsToK(int arr[], int n, int target)
 
 int main(int argc, char const *argv[])
 {
-    int arr[] = {4, 1, 1, 1, 2, 2};
+    // int arr[] = {4, 1, 1, 1, 2, 2};
+    int arr[] = {2, 3, 5, 1, 9};
     int n = sizeof(arr) / sizeof(arr[0]);
-    int ans = longestSubarraySumsToK(arr, n, 7);
+    int ans = longestSubarraySumsToK(arr, n, 10);
     cout << ans << " ";
     
     return 0;

@@ -14,7 +14,7 @@ int longestSubarrayHashed(vector<int> arr, long long k)
         {
             maxLen = max(maxLen, i + 1);
         }
-        int rem = sum - k;
+        long long rem = sum - k;
         if (hashmap.find(rem) != hashmap.end())
         {
             int len = i - hashmap[rem];
