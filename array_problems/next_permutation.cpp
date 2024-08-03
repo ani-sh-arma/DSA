@@ -46,7 +46,7 @@ vector<int> nextPermutation(vector<int> arr)
 
 int main(int argc, char const *argv[])
 {
-    vector<int> arr = {3, 2, 1};
+    vector<int> arr = {3, 2, 1, 4};
     vector<int> ans = nextPermutation(arr);
 
     for (int i = 0; i < ans.size(); i++)
