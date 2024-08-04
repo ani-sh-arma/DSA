@@ -1,18 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void nextPermutation(vector<int> arr, int in, vector<vector<int>> &ans)
+void nextPermutation(vector<int> arr, int in, vector<vector<int>> &permutations)
 {
     if (in >= arr.size())
     {
-        ans.push_back(arr);
+        permutations.push_back(arr);
         return;
     }
 
     for (int i = in; i < arr.size(); i++)
     {
         swap(arr[in], arr[i]);
-        nextPermutation(arr, in + 1, ans);
+        nextPermutation(arr, in + 1, permutations);
+        // swap(arr[in], arr[i]); // this line is not required for needed output but is said to be useful in some cases
     }
 }
 
@@ -21,20 +22,20 @@ int main(int argc, char const *argv[])
     vector<int> arr = {4, 1, 2, 3};
     vector<int> copy = arr;
     vector<int> res = {};
-    vector<vector<int>> ans = {};
+    vector<vector<int>> permutations = {};
     sort(copy.begin(), copy.end());
-    nextPermutation(copy, 0, ans);
+    nextPermutation(copy, 0, permutations);
 
-    for (int i = 0; i < ans.size(); i++)
+    for (int i = 0; i < permutations.size(); i++)
     {
-        if (i == ans.size() - 1)
+        if (i == permutations.size() - 1)
         {
-            res = ans[0];
+            res = permutations[0];
             break;
         }
-        if (ans[i] == arr)
+        if (permutations[i] == arr)
         {
-            res = ans[i + 1];
+            res = permutations[i + 1];
             break;
         }
     }
