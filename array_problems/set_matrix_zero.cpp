@@ -87,7 +87,11 @@ vector<vector<int>> optimalApproach(vector<vector<int>> arr)
 
 int main(int argc, char const *argv[])
 {
-    vector<vector<int>> arr = {{1, 2, 3}, {4, 5, 6}, {0, 0, 9}};
+    vector<vector<int>> arr = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {0, 0, 9},
+    };
     vector<vector<int>> res = optimalApproach(arr);
 
     for (int i = 0; i < res.size(); i++)

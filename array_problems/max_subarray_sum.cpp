@@ -88,8 +88,10 @@ vector<int> SubarrayOfMaxSubarraySum(vector<int> arr)
 int main(int argc, char const *argv[])
 {
     vector<int> arr = {-2, 1, -3, 4, -1, 2, 1, 2, -5, 4};
-    vector<int> ans = SubarrayOfMaxSubarraySum(arr);
+    // int ans = optimalMaxSubarraySum(arr);
+    // cout << ans << endl;
 
+    vector<int> ans = SubarrayOfMaxSubarraySum(arr);
     for (auto it : ans)
     {
         cout << it << " ";
