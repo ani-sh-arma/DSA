@@ -83,8 +83,8 @@ vector<int> majorityElementOptimal(vector<int> &arr)
 int main(int argc, char const *argv[])
 {
     vector<int> arr = {0, 1, 2, 0, 1, 2, 2};
-
     vector<int> res = majorityElementOptimal(arr);
+    
     for (auto it : res)
     {
         cout << it << " ";
