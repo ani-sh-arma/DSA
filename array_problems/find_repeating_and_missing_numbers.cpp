@@ -116,21 +116,23 @@ pair<int, int> optimal2(vector<int> a)
         xr = xr ^ (i + 1);
     }
 
-    // int bitNo = 0;
-    // while (1)
-    // {
-    //     if (xr & (1 << bitNo) != 0)
-    //     {
-    //         break;
-    //     }
-    //     bitNo++;
-    // }
-    int bitNo = xr & ~(xr - 1);
+    int bitNo = 0;
+    while (1)
+    {
+        if ((xr & (1 << bitNo)) != 0)
+        {
+            break;
+        }
+        bitNo++;
+    }
 
-    int zero = 0, one = 0;
+    // int bitNo = (xr & ~(xr - 1)); // easier way to find bitNumber(Index) through bit manipulation
+
+    int zero = 0;
+    int one = 0;
     for (int i = 0; i < n; i++)
     {
-        if (a[i] & (1 << bitNo) != 0)
+        if ((a[i] & (1 << bitNo)) != 0) // remove "1 << " when using bit manipulation
         {
             one = one ^ a[i];
         }
@@ -139,15 +141,15 @@ pair<int, int> optimal2(vector<int> a)
             zero = zero ^ a[i];
         }
     }
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        if (a[i] & (1 << bitNo) != 0)
+        if ((i & (1 << bitNo)) != 0) // remove "1 << " when using bit manipulation
         {
-            one = one ^ (i + 1);
+            one = one ^ i;
         }
         else
         {
-            zero = zero ^ (i + 1);
+            zero = zero ^ i;
         }
     }
 
@@ -168,8 +170,7 @@ pair<int, int> optimal2(vector<int> a)
 
 int main(int argc, char const *argv[])
 {
-    // vector<int> arr = {3, 1, 2, 5, 4, 6, 7, 4};
-    vector<int> arr = {3, 1, 2, 5, 4, 6, 7, 5};
+    vector<int> arr = {3, 1, 2, 5, 4, 6, 7, 6};
     pair<int, int> res = optimal2(arr);
     cout << res.first << " " << res.second;
     return 0;
