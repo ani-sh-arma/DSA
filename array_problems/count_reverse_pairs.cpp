@@ -69,8 +69,8 @@ int optimal(int a[], int low, int high)
 
 int main(int argc, char const *argv[])
 {
-    // int arr[] = {5, 4, 3, 2, 1};
-    int arr[] = {1, 3, 2, 3, 1};
+    int arr[] = {5, 4, 3, 2, 1};
+    // int arr[] = {1, 3, 2, 3, 1};
     cout << optimal(arr, 0, 4);
     return 0;
 }
