@@ -18,7 +18,7 @@ int maxSubarrayProduct(vector<int> arr)
     return maxProd;
 }
 
-int optimal(vector<int> arr)
+int optimal1(vector<int> arr)
 {
     int n = arr.size();
     int maxProd = INT_MIN;
@@ -38,9 +38,24 @@ int optimal(vector<int> arr)
     return maxProd;
 }
 
+int optimal2(vector<int> arr)
+{
+    int prod1 = arr[0], prod2 = arr[0], result = arr[0];
+
+    for (int i = 1; i < arr.size(); i++)
+    {
+        int temp = max({arr[i], prod1 * arr[i], prod2 * arr[i]});
+        prod2 = min({arr[i], prod1 * arr[i], prod2 * arr[i]});
+        prod1 = temp;
+        result = max(result, prod1);
+    }
+
+    return result;
+}
+
 int main(int argc, char const *argv[])
 {
     vector<int> arr = {1, 2, -3, 0, -4, -5};
-    cout << optimal(arr);
+    cout << optimal2(arr);
     return 0;
 }
