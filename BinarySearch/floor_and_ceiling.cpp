@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-pair<int, int> iterativeBinarySearch(vector<int> arr, int target)
+pair<int, int> floorAndCeil(vector<int> arr, int target)
 {
     int n = arr.size();
     int low = 0, high = n - 1;
 
     while (low <= high)
     {
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
         if (arr[mid] == target)
         {
             return {arr[mid], arr[mid]};
@@ -22,13 +22,18 @@ pair<int, int> iterativeBinarySearch(vector<int> arr, int target)
             low = mid + 1;
         }
     }
-    return {-1, -1};
+
+    if (high == -1 || low == -1)
+    {
+        return {-1, -1};
+    }
+    return {arr[high], arr[low]};
 };
 
 int main(int argc, char const *argv[])
 {
-    vector<int> arr = {3, 4, 6, 7, 9, 12, 16, 17};
-    pair<int, int> ans = iterativeBinarySearch(arr, 18);
+    vector<int> arr = {3, 4, 4, 7, 8, 10};
+    pair<int, int> ans = floorAndCeil(arr, 3);
     cout << "Iterative Binary Search : " << ans.first << " " << ans.second << endl;
     return 0;
 }
