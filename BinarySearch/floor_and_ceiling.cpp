@@ -15,11 +15,11 @@ pair<int, int> iterativeBinarySearch(vector<int> arr, int target)
         }
         else if (arr[mid] > target)
         {
-            high = mid;
+            high = mid - 1;
         }
         else
         {
-            low = mid;
+            low = mid + 1;
         }
     }
     return {-1, -1};
@@ -28,6 +28,7 @@ pair<int, int> iterativeBinarySearch(vector<int> arr, int target)
 int main(int argc, char const *argv[])
 {
     vector<int> arr = {3, 4, 6, 7, 9, 12, 16, 17};
-    cout << "Iterative : " << iterativeBinarySearch(arr, 6).first << " " << iterativeBinarySearch(arr, 6).second << endl;
+    pair<int, int> ans = iterativeBinarySearch(arr, 18);
+    cout << "Iterative Binary Search : " << ans.first << " " << ans.second << endl;
     return 0;
 }
