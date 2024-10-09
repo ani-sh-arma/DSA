@@ -3,49 +3,59 @@ using namespace std;
 
 int noOfTimesRotated(vector<int> a)
 {
-    int count = 0;
-    while (a[0] > a[a.size() - 1])
+    int count = 1;
+    while (a[count - 1] < a[count])
     {
-        a.push_back(a.front());
-        a.erase(a.begin());
         count++;
     }
     return count;
 }
 
-int findMin(vector<int> nums)
+int noOfRotations(vector<int> nums)
 {
-
     int low = 0, high = nums.size() - 1;
     int ans = INT_MAX;
+    int index = -1;
 
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
         if (nums[low] <= nums[high])
         {
-            ans = min(ans, nums[low]);
+            if (nums[low] < ans)
+            {
+                ans = nums[low];
+                index = low;
+            }
             break;
         }
 
         if (nums[low] < nums[mid])
         {
-            ans = min(ans, nums[low]);
+            if (nums[low] < ans)
+            {
+                ans = nums[low];
+                index = low;
+            }
             low = mid + 1;
         }
         else
         {
-            ans = min(ans, nums[mid]);
+            if (nums[mid] < ans)
+            {
+                ans = nums[mid];
+                index = mid;
+            }
             high = mid - 1;
         }
     }
-    return ans;
+    return index;
 }
 
 int main(int argc, char const *argv[])
 {
     vector<int> arr = {4, 5, 6, 7, -1, 0, 1, 2, 3};
-    int ans = noOfTimesRotated(arr);
+    int ans = noOfRotations(arr);
     cout << "Answer : " << ans << "\n";
     return 0;
 }
