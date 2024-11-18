@@ -76,13 +76,30 @@ vector<int> SubarrayOfMaxSubarraySum(vector<int> arr)
     }
 
     vector<int> ans;
-    for (int i = 0; i < arr.size(); i++)
+    for (int i = start; i <= end; i++)
     {
-        if (i >= start && i <= end)
-            ans.push_back(arr[i]);
+        ans.push_back(arr[i]);
     }
 
     return ans;
+}
+
+vector<int> revision(vector<int> arr)
+{
+    int n = arr.size();
+    int maxSum = INT_MIN;
+
+    for (int i = 0; i < n; i++)
+    {
+        int sum = 0;
+        for (int j = i; j < n; j++)
+        {
+            sum += arr[j];
+            maxSum = max(maxSum, sum);
+        }
+    }
+
+    printf("%d\n", maxSum);
 }
 
 int main(int argc, char const *argv[])
@@ -91,7 +108,7 @@ int main(int argc, char const *argv[])
     // int ans = optimalMaxSubarraySum(arr);
     // cout << ans << endl;
 
-    vector<int> ans = SubarrayOfMaxSubarraySum(arr);
+    vector<int> ans = revision(arr);
     for (auto it : ans)
     {
         cout << it << " ";
