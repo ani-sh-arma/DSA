@@ -11,6 +11,7 @@ def remove_exe_files(directory):
                 file.endswith(".exe")
                 | file.endswith(".class")
                 | file.endswith("tempCodeRunnerFile.cpp")
+                | file.endswith("tempCodeRunnerFile.py")
             ):
                 file_path = os.path.join(root, file)
                 try:
